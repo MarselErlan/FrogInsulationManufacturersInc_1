@@ -1,0 +1,42 @@
+
+.img-smaill {
+        width: 408.5px;
+        height: 189.2px;
+        object-fit: cover;
+    }
+.swiper-button-prev, .swiper-button-next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure they are above the images */
+    background-color: green; /* Background color */
+    color: white; /* Arrow color */
+    border-radius: 50%; /* Circular shape */
+    width: 20px; /* Width of the button */
+    height: 20px; /* Height of the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6; /* 40% transparency */
+}
+
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 30px; /* Adjust the size of the arrow icons */
+}
+
+.swiper-pagination-bullet {
+    background-color: white; /* Default color */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: green; /* Active bullet color */
+}

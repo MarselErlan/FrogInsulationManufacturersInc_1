@@ -1,0 +1,33 @@
+#cart-count-wrapper {
+    color: red;
+    background-color: yellow; /* Фон за числом */
+    border-radius: 50%; /* Круглая форма */
+    padding: 5px; /* Отступ вокруг числа */
+    position: absolute;
+    bottom: -5px; /* Позиционирование относительно верхнего края */
+    right: -7px; /* Позиционирование относительно правого края */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Тень для лучшей видимости */
+}
+
+#cart-count {
+    margin: 0; /* Удаление внешних отступов */
+    font-size: 1.2em; /* Увеличение размера шрифта */
+}
+#floating-cart-button img {
+    border-radius: 50%; /* Круглая форма */
+    position: absolute;
+    bottom: -5px; /* Позиционирование относительно верхнего края */
+    right: 5px;
+    width: 90px; /* Размер изображения */
+    height: auto; /* Сохранение пропорций */
+}
+
+
+#floating-cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    border-radius: 5px;
+    /* Удалить padding, если не нужен */
+}

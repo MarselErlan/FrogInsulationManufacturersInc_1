@@ -1,0 +1,39 @@
+/* Внешний вид для контейнера каждого заказа */
+.order-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/*!* Стили для кнопки "Mark as Loaded" *!*/
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/*Стили для отображения времени загрузки */
+.loaded-time {
+    font-style: italic;
+    color: #777;
+}
+
+/* Внешний вид для чекбокса и его метки */
+input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer; /* Добавляем курсор в виде руки для чекбокса */
+}
+
+label {
+    cursor: pointer; /* Добавляем курсор в виде руки для метки */
+}

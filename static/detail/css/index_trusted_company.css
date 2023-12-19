@@ -1,0 +1,24 @@
+
+.custom-swiper-container {
+    width: 100%; /* Занимает всю ширину контейнера */
+    height: 300px; /* Высота слайдера, можно настроить */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-swiper-wrapper {
+    display: flex;
+}
+
+.custom-swiper-slide {
+    width: 160px; /* Ширина одного слайда */
+    margin-right: 24px; /* Отступ между слайдами */
+    /* Дополнительные стили, если необходимо */
+}
+
+.custom-company-logo img {
+    max-width: 100%; /* Убедитесь, что изображения адаптируются к размеру слайда */
+    height: auto;
+}
+
+

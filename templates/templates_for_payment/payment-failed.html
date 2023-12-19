@@ -1,0 +1,22 @@
+{% extends "ForMainWepSite/base.html" %} 
+
+
+{% block content %}
+    {% load static %}
+
+      <h1>Payment failed for product: {{product.name}}</h1>
+    <div class="product-container">
+        <div class="products">
+            <img class="img" src="{{product.image}}" alt="">
+            <p>{{product.name}}</p>
+            <p>Price: $ {{product.price}}</p>
+            <p>Description: {{product.description}}</p>
+
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="{% static 'detail/css/checkout.css' %}">
+
+    
+    
+    
+{% endblock %} 

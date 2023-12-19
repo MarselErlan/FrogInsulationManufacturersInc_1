@@ -1,0 +1,28 @@
+{% extends "ForMainWepSite/base.html" %}
+<!-- Расширяем базовый шаблон "base.html". -->
+
+{% block title %}Update Client{% endblock %}
+<!-- Переопределяем блок "title", устанавливая заголовок страницы как "Update Client". -->
+
+{% block content %}
+<!-- Открываем блок "content" для размещения контента страницы. -->
+  <h1>Update Client Information</h1>
+  <!-- Выводим заголовок "Update Client Information". -->
+
+  <form method="POST">
+    {% csrf_token %}
+    <!-- Включаем CSRF-защиту. -->
+    {{ form.as_p }}
+    <!-- Отображаем форму для обновления информации о клиенте с использованием формового тега "as_p". -->
+    <button class="btn btn-primary" type="submit">update</button>
+    <!-- Кнопка "Update" для подтверждения обновления информации. -->
+
+    <a href="{% url 'custom_users:client_list' %}">Back to Client List</a>
+    <!-- Ссылка "Back to Client List" для возврата к списку клиентов. -->
+  </form>
+
+
+}
+{% endblock %}
+<!-- Завершаем блок "content". -->
+

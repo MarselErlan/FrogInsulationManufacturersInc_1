@@ -1,0 +1,26 @@
+{% extends "ForMainWepSite/base.html" %}
+<!-- Расширяем базовый шаблон "base.html". -->
+
+{% block title %}Confirm Delete Client{% endblock %}
+<!-- Переопределяем блок "title", устанавливая заголовок страницы как "Confirm Delete Client". -->
+
+{% block content %}
+<!-- Открываем блок "content" для размещения контента страницы. -->
+  <h1>Confirm Delete</h1>
+  <!-- Выводим заголовок "Confirm Delete". -->
+
+  <p>Are you sure you want to delete the client: <strong>{{ object.phone_number }}</strong>?</p>
+  <!-- Выводим текст с подтверждением удаления клиента и отображаем его номер телефона. -->
+
+  <form method="post">
+    {% csrf_token %}
+    <!-- Включаем CSRF-защиту. -->
+    <button type="submit">Yes, delete</button>
+    <!-- Кнопка "Yes, delete" для подтверждения удаления. -->
+    <a href="{% url 'client_list' %}">Cancel</a>
+    <!-- Ссылка "Cancel" для отмены удаления и перехода к списку клиентов. -->
+  </form>
+
+
+{% endblock %}
+<!-- Завершаем блок "content". -->

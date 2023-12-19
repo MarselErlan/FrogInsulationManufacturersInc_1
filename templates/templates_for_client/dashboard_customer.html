@@ -1,0 +1,45 @@
+{% extends "ForMainWepSite/base.html" %}
+
+{% block content %}
+
+
+    <div class="dashboard-container">
+    <div class="sidebar">
+        <ul>
+{#            <li><a href="{% url 'order_history' %}">История заказов</a></li>#}
+            <li><a href="{% url 'custom_users:update_profile' %}">Мой профиль</a></li>
+            <li><a href="{% url 'custom_users:dashboard_customer' %}">Мой адрес</a></li>
+{#            <li><a href="{% url 'settings' %}">Настройки</a></li>#}
+        </ul>
+    </div>
+    <div class="main-content">
+  <h1>Dashboard</h1>
+  <p>Welcome, {{ request.user.client.customer_name }}!</p>
+
+  <h2>Your Addresses</h2>
+  <ul>
+    {% for address in addresses %}
+    <div>
+        <p>{{ address.company_name }}</p>
+        <p>{{ address.address_line1 }}</p>
+        <p>{{ address.address_line2 }}</p>
+        <p>{{ address.city }}, {{ address.state }}, {{ address.postal_code }}</p>
+        <p>{{ address.country }}</p>
+        <p>{{ address.additional_info }}</p>
+    </div>
+{% endfor %}
+
+
+  </ul>
+  <a href="{% url 'custom_users:add_address' %}" class="btn btn-primary">Add New Address</a>
+
+  <h2>Profile</h2>
+  <a href="{% url 'custom_users:update_profile' %}" class="btn btn-secondary">Edit Profile</a>
+
+
+    {% block dashboard_content %}
+        {% endblock dashboard_content %}
+    </div>
+</div>
+
+{% endblock %}

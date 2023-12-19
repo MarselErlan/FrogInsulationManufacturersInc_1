@@ -1,0 +1,23 @@
+.notification button {
+    background-color: #4CAF50; /* Зеленый цвет */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.notification button:hover {
+    background-color: #45a049; /* Немного темнее зеленый цвет при наведении */
+}
+.notification p {
+    color: #ff6347; /* Красный цвет текста */
+    font-size: 18px; /* Увеличенный размер шрифта */
+    /* Дополнительные стили (если нужно) */
+}

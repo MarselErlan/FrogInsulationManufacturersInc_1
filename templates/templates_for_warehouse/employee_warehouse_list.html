@@ -1,0 +1,12 @@
+{% extends "ForMainWepSite/base.html" %}
+
+{% block content %}
+  <h2>List of Employees</h2>
+  <ul>
+    {% for employee in object_list %}
+      <li>{{ employee.user }}</li>
+    {% empty %}
+      <li>No employees found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "ForMainWepSite/base.html" %}
+<!-- Расширяем базовый шаблон "base.html". -->
+
+{% block content %}
+<!-- Открываем блок "content" для размещения контента страницы. -->
+<h1>Clients List</h1>
+<!-- Выводим заголовок "Clients List". -->
+<table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Email </th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <!-- и так далее для других полей -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in clients %}
+        <!-- Итерируемся по списку клиентов и выводим информацию о каждом клиенте. -->
+        <tr>
+            <!-- Создаем строку таблицы для каждого клиента. -->
+            <td>{{ client.username }}</td>
+            <!-- Отображаем имя клиента. -->
+            <td>{{ client.email }}</td>
+            <!-- Отображаем email клиента. -->
+            <td>{{ client.phone_number }}</td>
+            <!-- Отображаем номер телефона клиента. -->
+            <td>{{ client.age }}</td>
+            <!-- Отображаем возраст клиента. -->
+            <td>{{ client.get_gender_display }}</td>
+            <!-- Отображаем пол клиента с использованием метода get_gender_display(). -->
+            <td><a href="{% url 'custom_users:client_edit' client.pk %}">Edit</a></td>
+            <!-- Создаем ссылку "Edit" для редактирования клиента. -->
+            <td><a href="{% url 'custom_users:client_delete' client.pk %}">Delete</a></td>
+            <!-- Создаем ссылку "Delete" для удаления клиента. -->
+            <!-- и так далее для других полей -->
+        </tr>
+        {% endfor %}
+        <!-- Завершаем цикл for. -->
+    </tbody>
+</table>
+<!-- Создаем таблицу для отображения данных о клиентах. -->
+
+<a href="{% url 'custom_users:client_add' %}">Add New Client</a>
+<!-- Создаем ссылку "Add New Client" для добавления нового клиента. -->
+<a href="{% url 'MainWepSite:index' %}">Home</a>
+<!-- Создаем ссылку "Home" для перехода на домашнюю страницу. -->
+
+
+{% endblock %}
+<!-- Завершаем блок "content". -->
+

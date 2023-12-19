@@ -1,0 +1,36 @@
+
+.messages .error {
+    color: black;
+    background-color: #ffccd5;
+    border: 1px solid #ff5c8a;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.messages .info {
+    color: black;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.messages .warning {
+    color: black;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.messages .success {
+    color: black;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}

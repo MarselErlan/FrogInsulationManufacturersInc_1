@@ -1,0 +1,10 @@
+{% extends "ForMainWepSite/base.html" %}
+
+{% block content %}
+  <h2>Are you sure you want to delete "{{ object.title }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+    <a href="{% url 'MainWepSite:blog_list' %}">Cancel</a>
+  </form>
+{% endblock %}

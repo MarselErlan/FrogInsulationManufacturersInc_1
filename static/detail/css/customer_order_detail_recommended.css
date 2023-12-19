@@ -1,0 +1,38 @@
+.recommended-products-swiper {
+    width: 100%;
+    height: 200px; /* Можно настроить по вашим потребностям */
+}
+
+.recommended-product-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.recommended-product-image, .recommended-product-placeholder {
+    width: 300px; /* Размер изображения */
+    height: auto;
+}
+
+.recommended-product-name {
+    color: #1a1a1a; /* Цвет текста */
+    margin-top: 10px;
+    font-size: 16px; /* Размер шрифта */
+}
+
+.custom-swiper-prev-recommended, .custom-swiper-next-recommended {
+    background-color: #ddd; /* Фон кнопок */
+    border-radius: 50%; /* Круглые кнопки */
+    width: 30px; /* Ширина кнопок */
+    height: 30px; /* Высота кнопок */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Цвет иконки */
+    opacity: 0.8; /* Прозрачность кнопок */
+}
+
+.custom-swiper-prev-recommended:hover, .custom-swiper-next-recommended:hover {
+    opacity: 1; /* Прозрачность при наведении */
+}

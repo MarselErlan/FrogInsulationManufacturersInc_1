@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+{% load static %}
+
+
+
+
+
+
+{% load static %}
+
+{#<script defer src="{% static '_next/static/chunks/7052-5ae32b0979dda73e.js' %}"></script>#}
+{#<script defer src="{% static '_next/static/chunks/pages/login-8acdef807aa61ce1.js' %}"></script>#}
+
+
+
+
+
+{% load static %}
+
+{#<script defer src="{% static '_next/static/chunks/7052-5ae32b0979dda73e.js' %}"></script>#}
+{#<script defer src="{% static '_next/static/chunks/pages/register-3574c60b86133de8.js' %}"></script>#}
+
+
+
+
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Подключение jQuery (если у вас ещё не подключено) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Подключение CSS файла для Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Подключение JS файла для Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+
+
+
+
+
+    <!-- Подключаем ваш собственный CSS файл после Bootstrap -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+
+
+
+    <title>{% block title %}Магазин{% endblock %}</title>
+</head>
+
+		<div class="top-bar2">
+			<p>Welcome Our Company!<!-- --> <a href="/candidates-dashboard/bookmark">Frog®</a></p>
+			<div class="top-bar-right">
+
+
+				<div class="language-select">
+					<img alt="image" src="{% static 'assets/images/icon/flag-eng.svg' %}"><span>Language</span>
+					<ul class="topbar-sublist">
+						<li><img alt="image" src="{% static 'assets/images/icon/flag-germeny.svg' %}"><span>Germeny</span></li>
+						<li><img alt="image" src="{% static 'assets/images/icon/flag-french.svg' %}"><span>French</span></li>
+						<li><img alt="image" src="{% static 'assets/images/icon/flag-bangla.svg' %}"><span>Bengali</span></li>
+					</ul>
+				</div>
+
+
+				<div class="social-area">
+					<ul>
+						<li>
+							<a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+						</li>
+						<li>
+							<a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
+						</li>
+                        <li>
+							<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+
+
+    <div>
+        <p>Logged in as: {{ user.username }}</p>
+        {% if user.is_authenticated %}
+        {% endif %}
+    </div>
+        {% block content %}
+
+
+
+
+        {% endblock %}
+
+
+
+    <footer class="footer1">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-3 col-md-4 col-sm-6 mb--50 d-flex justify-content-sm-start justify-content-center">
+						<div class="footer-widget">
+							<div class="widget-title">
+								<h5>About Company</h5>
+							</div>
+							<div class="menu-container">
+								<ul>
+									<li>
+										<a href="/contact">Contact Us <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/#aboutfrog">About Company <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="https://www.google.com/maps/place/Zenith+Building+LIC/@40.7421877,-73.9596267,17.02z/data=!4m15!1m8!3m7!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6!3b1!8m2!3d40.7127753!4d-74.0059728!16zL20vMDJfMjg2!3m5!1s0x89c25922d6f60133:0x2e6cc1cf72d432e8!8m2!3d40.7420675!4d-73.9566063!16s%2Fg%2F11ddzr6q5g?entry=ttu">location <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 mb--50 d-flex justify-content-lg-center justify-content-md-end justify-content-sm-start justify-content-center">
+						<div class="footer-widget">
+							<div class="widget-title">
+								<h5>Product List</h5>
+							</div>
+							<div class="menu-container">
+								<ul>
+									<li>
+										<a href="/#Gallery">Product Gallery <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/#PopularProducts">Popular Products <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/#Top6">Top 6 selling <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/#OurRecentArticle">Our Recent Article <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb--50 d-flex justify-content-md-center justify-content-sm-end justify-content-center">
+						<div class="footer-widget">
+							<div class="widget-title">
+								<h5>Page</h5>
+							</div>
+							<div class="menu-container">
+								<ul>
+									<li>
+										<a href="/#Gallery">Make order <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/login"><!-- -->Login <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/register_clients"><!-- -->Register <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+									<li>
+										<a href="/blog"><!-- -->Blog <i class="bx bx-up-arrow-alt"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-lg-end justify-content-md-center justify-content-sm-end justify-content-center">
+						<div class="footer-widget four">
+							<div class="widget-title">
+								<h5>Download App</h5>
+							</div>
+							<div class="app-list">
+								<ul>
+									<li>
+										<a href="#"><img alt="" src="{% static 'assets/images/icon/apple-app.svg' %}"></a>
+									</li>
+									<li>
+										<a href="#"><img alt="" src="{% static 'assets/images/icon/google-play.svg' %}"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-btm">
+				<div class="footer-logo">
+                    <img alt="Frog Logo" src="{% static 'assets/images/cycle.png' %}">
+                </div>
+                    <style>
+                        .footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 10px; /* adjust as needed */
+
+}
+
+    .footer-logo img {
+      border-radius: 50%; /* Makes the image round */
+      border: 5px solid black; /* Adds a black circular border */
+      width: 155px; /* Width as specified */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow effect */
+      transition: transform 0.3s ease; /* Smooths the transition effects */
+      background-color: #fff; /* Adds a white background */
+    }
+
+    .footer-logo img:hover {
+      transform: scale(1.05); /* Slightly enlarges the logo on hover */
+    }
+</style>
+
+					<div class="row align-items-center">
+						<div class="col-lg-6 d-flex justify-content-lg-start justify-content-center">
+							<div class="support">
+								<div class="icon"><img alt="" src="{% static 'assets/images/icon/footer-support-icon.svg' %}"></div>
+								<div class="content">
+									<h5>Support Line:</h5><a href="tel:+15163038777">+1 (516) 303-8777</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 d-flex justify-content-lg-end justify-content-center">
+							<div class="footer-btm-menu">
+								<ul>
+									<li>
+										<a href="/">Privacy Policy</a>
+									</li>
+									<li>
+										<a href="/">Terms of Services</a>
+									</li>
+									<li>
+										<a href="https://www.google.com/maps/place/Zenith+Building+LIC/@40.7421877,-73.9596267,17.02z/data=!4m15!1m8!3m7!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6!3b1!8m2!3d40.7127753!4d-74.0059728!16zL20vMDJfMjg2!3m5!1s0x89c25922d6f60133:0x2e6cc1cf72d432e8!8m2!3d40.7420675!4d-73.9566063!16s%2Fg%2F11ddzr6q5g?entry=ttu">Our Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row border-top align-items-center">
+						<div class="col-lg-6 d-flex justify-content-lg-start justify-content-center">
+							<div class="copyright-area">
+							</div>
+						</div>
+						<div class="col-lg-6 d-flex justify-content-lg-end justify-content-center">
+							<div class="social-area">
+								<h6>Follow Frog:</h6>
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+									</li>
+									<li>
+										<a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
+									</li>
+									<li>
+										<a href="https://www.linkedin.com/"><i class="bx bxl-linkedin"></i></a>
+									</li>
+									<li>
+										<a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+
+
+
+
+
+
+
+
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+</body>
+</html>
+

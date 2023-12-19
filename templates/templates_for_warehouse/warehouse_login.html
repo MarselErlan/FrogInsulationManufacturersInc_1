@@ -1,0 +1,40 @@
+{% extends "ForMainWepSite/base.html" %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Вход в систему</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="submit-button">
+            <button type="submit">Войти</button>
+        </div>
+    </form>
+    
+    <div class="register-link">
+{#        <p>Еще не зарегистрированы? <a href="{% url 'MainOffice:register.html' %}">Зарегистрироваться</a></p>#}
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_css %}
+<style>
+    .login-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .submit-button {
+        margin-top: 10px;
+    }
+
+    .register-link {
+        margin-top: 15px;
+        text-align: center;
+    }
+</style>
+{% endblock %}

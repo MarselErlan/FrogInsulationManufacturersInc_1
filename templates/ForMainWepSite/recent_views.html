@@ -1,0 +1,30 @@
+{% extends "ForMainWepSite/base.html" %} <!-- Расширение базового шаблона -->
+
+{% block content %} <!-- Определение блока контента страницы -->
+{% load static %}
+
+<div class="recent-views">
+    <div class="title">
+        <h5>Recent Gallery Views</h5>
+    </div>
+    {% if recent_views %}
+        <div class="products">
+            {% for product in recent_views %}
+                <div class="product">
+                    <a href="{{ product.detail_url }}">
+                        {% if product.main_image %}
+                            <img src="{{ product.main_image }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img src="{% static 'assets/images/placeholder-image.png' %}" alt="Default Image">
+                        {% endif %}
+                        <p>{{ product.name }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Вы еще не просмотрели ни одного товара.</p>
+    {% endif %}
+</div>
+
+{% endblock %} <!-- Завершение блока контента страницы -->

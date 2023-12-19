@@ -1,0 +1,37 @@
+
+/* Ваши стили для анимации */
+.hero-content, .user-area {
+    transform: scale(1.2); /* Начальный масштаб (увеличение на 20%) */
+    transition: transform 0.3s; /* Длительность анимации и свойства, которые вы хотите анимировать */
+}
+
+.hero-content.animated, .user-area.animated {
+    transform: scale(1); /* Масштаб после анимации (возвращение к нормальному размеру) */
+}
+
+.hero-img img {
+    transform: translateY(20px) scale(1); /* Начальный масштаб и смещение фото вниз на 20px по вертикали */
+    transition: transform 0.3s; /* Длительность анимации и свойства, которые вы хотите анимировать */
+}
+
+.hero-img.animated img {
+    transform: translateY(0) scale(1.2); /* Масштаб после анимации (увеличение на 20%) и смещение вверх на 0px */
+}
+
+  /* Новые стили для анимации абзаца и списка пользователей */
+.animated-p {
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateY(20px); /* Начальное смещение вниз на 20px по вертикали */
+    transition: opacity 0.3s, transform 0.3s; /* Длительность анимации и свойства, которые вы хотите анимировать */
+}
+
+.animated-ul {
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateY(20px); /* Начальное смещение вниз на 20px по вертикали */
+    transition: opacity 0.3s, transform 0.3s; /* Длительность анимации и свойства, которые вы хотите анимировать */
+}
+
+.animated-p.show, .animated-ul.show {
+    opacity: 1; /* После анимации элементы полностью видимы */
+    transform: translateY(0); /* После анимации элементы не смещены */
+}

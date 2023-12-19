@@ -1,0 +1,34 @@
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pagination .step-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination .step-links a, .pagination .step-links span {
+    background: rgba(1,229,110,0.83); /* Ваш основной цвет */
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: transform .25s ease, background-color .25s ease;
+    border-radius: 999px; /* Округлые края */
+    margin: 0 8px; /* Увеличенное пространство между элементами */
+}
+
+.pagination .step-links a:hover, .pagination .step-links .current {
+    transform: scale(1.1); /* Эффект увеличения при наведении */
+
+}
+
+.pagination .step-links .current {
+    background-color: #01e56e;
+    color: white;
+}
+
+

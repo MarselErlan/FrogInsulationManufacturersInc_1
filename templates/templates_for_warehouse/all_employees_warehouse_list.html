@@ -1,0 +1,42 @@
+{% extends "ForMainWepSite/base.html" %}
+
+{% block content %}
+<h1>All Employees</h1>
+
+<h2>Warehouse Supervisor</h2>
+<ul>
+    {% for warehouse_supervisor in warehouse_supervisors %}
+    <li>{{ warehouse_supervisor.user }}</li>
+    {% empty %}
+      <li>No employees found.</li>
+    {% endfor %}
+</ul>
+
+<h2>Warehouse Worker</h2>
+<ul>
+    {% for warehouse_worker in warehouse_workers %}
+    <li>{{ warehouse_worker.user }}</li>
+    {% empty %}
+      <li>No employees found.</li>
+    {% endfor %}
+</ul>
+
+<h2>Driver</h2>
+<ul>
+    {% for driver in drivers %}
+    <li>{{ driver.user }}</li>
+    {% empty %}
+      <li>No employees found.</li>
+    {% endfor %}
+</ul>
+
+<h2>Warehouse Worker and Driver</h2>
+<ul>
+    {% for warehouse_worker_driver in warehouse_worker_drivers %}
+    <li>{{ warehouse_worker_driver.user }}</li>
+    {% empty %}
+      <li>No employees found.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

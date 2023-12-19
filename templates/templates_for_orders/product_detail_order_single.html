@@ -1,0 +1,65 @@
+<!-- product_detail_order_boxed.html -->
+{% extends "ForMainWepSite/base.html" %}
+
+{% block content %}
+  <title>Product Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <div class="container">
+    <h2>Product Details</h2>
+    <p>Type something in the input field to search the table for product sizes or prices:</p>
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Product Number</th>
+          <th>Package Type</th>
+          <th>Size</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        {% for size in product_sizes %}
+          <tr>
+            <td>{{ size.size_sku }}</td>
+            <td>{{ size.product_number }}</td>
+            <td>{{ size.get_package_type_display }}</td>
+            <td>{{ size.size.value }}</td>
+            <td>{{ size.size_price }}</td>
+            <td>
+
+
+<form action="{% url 'orders:add_product_to_order' product.id size.id order_id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="product_id" value="{{ product.id }}" />
+    <input type="hidden" name="size_id" value="{{ size_id }}" />
+    <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: auto;">
+    <button type="submit" class="btn btn-primary">Добавить в заказ</button>
+</form>
+
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+{% endblock %}
+

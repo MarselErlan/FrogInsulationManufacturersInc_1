@@ -1,0 +1,29 @@
+.add_to_cart_btn, .buy_now_btn {
+    background-color: #ffd714; /* Ярко-оранжевый цвет для кнопок */
+    color: white;
+    border: 2px solid transparent; /* Прозрачная граница для сохранения размера кнопки при изменении состояния */
+    padding: 12px 24px;
+    margin: 8px 0;
+    border-radius: 3px; /* Заостренные углы */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.add_to_cart_btn:hover, .buy_now_btn:hover {
+    background-color: #fdd822; /* Темно-оранжевый цвет при наведении */
+    border-color: #a65c00; /* Смена цвета границы */
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2); /* Добавление тени для эффекта приподнятости */
+}
+
+.buy_now_btn {
+    background-color: #fa8900; /* Темный оттенок оранжевого для кнопки "Buy now" */
+}
+
+.buy_now_btn:hover {
+    background-color: #ff9516; /* Еще более темный оттенок при наведении */
+}
