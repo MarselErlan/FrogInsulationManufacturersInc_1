@@ -60,13 +60,18 @@
 			<p>Welcome Our Company!<!-- --> <a href="/candidates-dashboard/bookmark">Frog®</a></p>
 			<div class="top-bar-right">
 
-
+ <div>
+        <p>Logged in as: {{ user.username }}</p>
+        {% if user.is_authenticated %}
+        {% endif %}
+    </div>
 				<div class="language-select">
-					<img alt="image" src="{% static 'assets/images/icon/flag-eng.svg' %}"><span>Language</span>
+
+					<img alt="image" src="{% static 'assets/images/icon/Flag_of_the_United_States.svg' %}"><span>Language</span>
 					<ul class="topbar-sublist">
-						<li><img alt="image" src="{% static 'assets/images/icon/flag-germeny.svg' %}"><span>Germeny</span></li>
-						<li><img alt="image" src="{% static 'assets/images/icon/flag-french.svg' %}"><span>French</span></li>
-						<li><img alt="image" src="{% static 'assets/images/icon/flag-bangla.svg' %}"><span>Bengali</span></li>
+{#						<li><img alt="image" src="{% static 'assets/images/icon/flag-germeny.svg' %}"><span>Germeny</span></li>#}
+{#						<li><img alt="image" src="{% static 'assets/images/icon/flag-french.svg' %}"><span>French</span></li>#}
+{#						<li><img alt="image" src="{% static 'assets/images/icon/flag-bangla.svg' %}"><span>Bengali</span></li>#}
 					</ul>
 				</div>
 
@@ -97,11 +102,7 @@
 		</div>
 
 
-    <div>
-        <p>Logged in as: {{ user.username }}</p>
-        {% if user.is_authenticated %}
-        {% endif %}
-    </div>
+
         {% block content %}
 
 
