@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 from MainWepSite.views import BlogPostListView, blog_post_detail, BlogPostCreateView, BlogPostUpdateView, \
     BlogPostDeleteView, CommentListView, CommentDeleteView
@@ -23,8 +23,8 @@ urlpatterns = [
 
     path('cart/', views.view_cart, name='view_cart'),
     path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
-    path('remove_from_cart/(?P<sku>[\w-]+)/\\Z', views.remove_from_cart, name='remove_from_cart'),
-    path('update_cart_quantity/(?P<sku>[\w-]+)/\\Z', views.update_cart_quantity, name='update_cart_quantity'),
+    re_path(r'remove_from_cart/(?P<sku>[\w-]+)/\\Z', views.remove_from_cart, name='remove_from_cart'),
+    re_path(r'update_cart_quantity/(?P<sku>[\w-]+)/\\Z', views.update_cart_quantity, name='update_cart_quantity'),
     path('clear_cart/', views.clear_cart, name='clear_cart'),
 
     path('recent-views/', views.recent_views, name='recent-views'),  # URL для недавно просмотренных продуктов
