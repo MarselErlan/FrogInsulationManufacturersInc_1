@@ -93,7 +93,6 @@ def save_order_details(request):
             return HttpResponseRedirect('/confirm-order/')
     else:
         form = OrderForm(user=request.user, initial={'client': client})
-        print("Форма не валидна:", form.errors)
 
     return render(request, 'templates_for_orders/save_order_details.html', {'form': form})
 
@@ -214,7 +213,6 @@ def confirm_order(request):
         'customer_email': request.session.get('customer_email'),
         'customer_phone': request.session.get('customer_phone')
     }
-    print(request.session.get('order_data'))
 
     # Создаем форму PayPal
     form = PayPalPaymentsForm(initial=paypal_dict)
