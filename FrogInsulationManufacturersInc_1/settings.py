@@ -172,4 +172,4 @@ PAYPAL_TEST = True
 
 PAYPAL_RECEIVER_EMAIL = os.environ.get('PAYPAL_RECEIVER_EMAIL') # where cash is paid into
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-PAYPAL_BUY_BUTTON_IMAGE = 'https://ltdfoto.ru/images/2023/12/11/CITYPNG.COMDownload-PayPal-Yellow-Payment-Button-PNG-117.png'
+PAYPAL_BUY_BUTTON_IMAGE = os.environ.get('PAYPAL_BUY_BUTTON_IMAGE')
