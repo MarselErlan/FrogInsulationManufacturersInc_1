@@ -1,26 +1,19 @@
 from _decimal import InvalidOperation
 import os
 from django.core.files.storage import default_storage
-from django.db.models import Q
-from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, View
 from paypal.utils import logger
-
 from MainOffice.models import OperationalManager, President, AccountsReceivableManager, AccountsReceivable, \
     AccountsPayable
 from Warehouse1.models import Driver, WarehouseSupervisor
 from custom_users.models import DeliveryAddress, Client
-# from orders.forms import OrderForm, OrderItemForm, OrderItemFormSize
+from orders.forms import OrderForm, OrderItemForm, OrderItemFormSize
 from orders.models import Order, OrderStatus, OrderStatusHistory, OrderItem, Notification
-from MainWepSite.models import Product, ProductSize, Size
-from django.contrib import messages
 from django.http import JsonResponse, HttpResponseRedirect
 from MainWepSite.views import get_recent_views_with_details, recommend_products_based_on_views
-from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-# from .forms import OrderForm
+from .forms import OrderForm
 from orders.models import Order, OrderItem
 from MainWepSite.models import Product, ProductSize
 from decimal import Decimal
@@ -29,8 +22,7 @@ from MainWepSite.models import Product
 from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import uuid
-# from django.views.decorators.csrf import csrf_exempt
-from paypal.standard.ipn.signals import valid_ipn_received
+from django.views.decorators.csrf import csrf_exempt
 from django.utils.timezone import now
 from .models import Notification  # Убедитесь, что импортируете модель Notification
 
@@ -915,7 +907,6 @@ class EditOrderCallView(BaseAddProductView):
 
 # Update this method to fetch the details from ProductSize, not Product:
 from django.http import JsonResponse
-from django.http import JsonResponse
 
 
 
@@ -954,16 +945,6 @@ def update_based_on_size_call(request, package_type, product_number, size_sku, s
     return JsonResponse(data)
 
 
-
-
-
-
-
-
-
-
-
-from django.urls import reverse
 @login_required
 def operator_create_order(request):
     if request.method == 'POST':
@@ -980,11 +961,6 @@ def operator_create_order(request):
     return render(request, 'templates_for_orders/save_order_details.html', {'form': form})
 
 
-
-
-
-
-from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import ListView, DetailView
 from django.urls import reverse
 
@@ -1273,11 +1249,6 @@ def supervisor_take_order_back(request, order_id):
     return redirect('orders:warehouse_order_list')
 
 
-
-
-
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
@@ -1363,7 +1334,7 @@ def driver_order_list(request, driver_id):
 
 
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect
 from django.contrib import messages
 
 
@@ -1451,7 +1422,7 @@ def own_driver_order_list(request):
 
 
 
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from .models import Order, OrderItem
 
 def DriverOrderDetailView(request, order_id):
