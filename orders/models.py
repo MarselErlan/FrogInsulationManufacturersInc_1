@@ -20,7 +20,7 @@ class OrderStatus(models.TextChoices):
 class Order(models.Model):
     delivery_address = models.ForeignKey(DeliveryAddress, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
     client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=20, choices=OrderStatus.choices, default=OrderStatus.RECEIVED)
+    status = models.CharField(max_length=200, choices=OrderStatus.choices, default=OrderStatus.RECEIVED)
     president = models.ForeignKey(President, null=True, blank=True, on_delete=models.SET_NULL)
     operational_manager = models.ForeignKey(OperationalManager, null=True, blank=True, on_delete=models.SET_NULL)
     accounts_receivable_manager = models.ForeignKey(AccountsReceivableManager, null=True, blank=True, on_delete=models.SET_NULL)
@@ -35,7 +35,7 @@ class Order(models.Model):
     customer_phone = models.CharField(max_length=15)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    company_name = models.CharField(max_length=100, verbose_name='Company Name', blank=True)
+    company_name = models.CharField(max_length=200, verbose_name='Company Name', blank=True)
 
     address_line1 = models.CharField(max_length=255, blank=True, null=True)
     address_line2 = models.CharField(max_length=255, blank=True, null=True)
@@ -45,17 +45,17 @@ class Order(models.Model):
 
     tax_exemption_document = models.FileField(upload_to='tax_exemption_documents/', blank=True, null=True)
 
-    postal_code = models.CharField(max_length=15, blank=True, null=True)
+    postal_code = models.CharField(max_length=150, blank=True, null=True)
     additional_info = models.TextField(blank=True, null=True)
 
     is_loaded = models.BooleanField(default=False, null=True)
     sent_at = models.DateTimeField(null=True, blank=True)
     truck_fully_loaded = models.BooleanField(default=False, null=True)
 
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    tax = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    total_price = models.DecimalField(max_digits=100, decimal_places=2, null=True)
+    tax = models.DecimalField(max_digits=100, decimal_places=2, null=True)
     is_paid = models.BooleanField(default=False, null=True)
-    payment_method = models.CharField(max_length=100, default='offline', null=True)
+    payment_method = models.CharField(max_length=1000, default='offline', null=True)
     transaction_id = models.UUIDField(null=True)
 
     def send_for_loading(self):
@@ -116,7 +116,7 @@ class Order(models.Model):
 
 class OrderStatusHistory(models.Model):
     order = models.ForeignKey('Order', related_name='status_history', on_delete=models.CASCADE)
-    status = models.CharField(max_length=50)
+    status = models.CharField(max_length=200)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
