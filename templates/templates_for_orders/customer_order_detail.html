@@ -574,26 +574,25 @@
 								<div class="swiper-wrapper">
                                     <div class="swiper-container recent-views-swiper">
                                         <div class="swiper-wrapper">
-        {% for product in recent_views %}
-            <div class="swiper-slide recent-view-slide">
-                <a href="{{ product.detail_url }}">
-                    {% if product.main_image %}
-                        <img src="{{ product.main_image }}" alt="" class="recent-view-image">
-                    {% else %}
-                        <img src="{% static 'assets/images/placeholder-image.png' %}" alt="Default Image" class="recent-view-placeholder">
-                    {% endif %}
-                    <p class="recent-view-name">{{ product.name }}</p>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
+                                            {% for product in recent_views %}
+                                                <div class="swiper-slide recent-view-slide">
+                                                    <a href="{{ product.detail_url }}">
+                                                        {% if product.main_image %}
+                                                            <img src="{{ product.main_image }}" alt="" class="recent-view-image">
+                                                        {% else %}
+                                                            <img src="{% static 'assets/images/placeholder-image.png' %}" alt="Default Image" class="recent-view-placeholder">
+                                                        {% endif %}
+                                                        <p class="recent-view-name">{{ product.name }}</p>
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
                                         <div class="swiper-button-prev custom-swiper-prev"></div>
                                         <div class="swiper-button-next custom-swiper-next"></div>
                                     </div>
                                     <link rel="stylesheet" type="text/css" href="{% static 'detail/css/customer_order_detail_recent_view.css' %}">
                                     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
                                     <script src="{% static 'detail/js/customer_order_detail_recent_view.js' %}" ></script>
-
 								</div>
 							</div>
 						</div>
@@ -634,16 +633,9 @@
 							</div>
 						</div>
 					</div>
-
-
-
-
-
-
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<script src="{% static '/_next/static/chunks/717-a88701aea31ab923.js' %}">
