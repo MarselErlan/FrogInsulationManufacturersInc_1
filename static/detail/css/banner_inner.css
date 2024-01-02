@@ -24,7 +24,6 @@
     0% {
         transform: translateX(85px);
     }
-
     100% {
         transform: translateX(-90px);
     }
@@ -34,7 +33,6 @@
     0% {
         transform: translateX(-90px);
     }
-
     100% {
         transform: translateX(85px);
     }
@@ -44,7 +42,6 @@
     0% {
         transform: translateX(85px);
     }
-
     100% {
         transform: translateX(-90px);
     }
@@ -54,15 +51,75 @@
     0% {
         transform: translateX(-90px);
     }
-
     100% {
         transform: translateX(85px);
     }
 }
 
-
-
 .dark-bg {
     background: #77ff4a;
 }
+
+/* Медиа-запросы для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .wave-divider {
+        height: 30px; /* Уменьшенная высота волн на мобильных устройствах */
+    }
+
+    .wave-parallax1 {
+        animation: wave-move1 10s linear infinite;
+    }
+
+    .wave-parallax2 {
+        animation: wave-move2 8s linear infinite;
+    }
+
+    .wave-parallax3 {
+        animation: wave-move3 6s linear infinite;
+    }
+
+    .wave-parallax4 {
+        animation: wave-move4 4s linear infinite;
+    }
+
+    /* Опционально: можно настроить или уменьшить амплитуду движения волн */
+    @keyframes wave-move1 {
+        0% {
+            transform: translateX(45px);
+        }
+        100% {
+            transform: translateX(-45px);
+        }
+    }
+
+    @keyframes wave-move2 {
+        0% {
+            transform: translateX(-45px);
+        }
+        100% {
+            transform: translateX(45px);
+        }
+    }
+
+    @keyframes wave-move3 {
+        0% {
+            transform: translateX(45px);
+        }
+        100% {
+            transform: translateX(-45px);
+        }
+    }
+
+    @keyframes wave-move4 {
+        0% {
+            transform: translateX(-45px);
+        }
+        100% {
+            transform: translateX(45px);
+        }
+    }
+}
+
+
+
 

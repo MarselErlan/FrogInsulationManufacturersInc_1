@@ -36,3 +36,26 @@
 .custom-swiper-prev-recommended:hover, .custom-swiper-next-recommended:hover {
     opacity: 1; /* Прозрачность при наведении */
 }
+
+
+/* Медиа-запросы для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .recommended-products-swiper {
+        height: 150px; /* Уменьшенная высота для мобильных устройств */
+    }
+
+    .recommended-product-image, .recommended-product-placeholder {
+        width: 150px; /* Уменьшенный размер изображения для мобильных устройств */
+    }
+
+    .recommended-product-name {
+        font-size: 14px; /* Уменьшенный размер шрифта */
+    }
+
+    .custom-swiper-prev-recommended, .custom-swiper-next-recommended {
+        width: 25px; /* Уменьшенная ширина кнопок */
+        height: 25px; /* Уменьшенная высота кнопок */
+    }
+
+    /* Дополнительные адаптивные стили, если необходимо */
+}

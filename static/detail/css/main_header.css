@@ -35,3 +35,20 @@
     opacity: 1; /* После анимации элементы полностью видимы */
     transform: translateY(0); /* После анимации элементы не смещены */
 }
+
+
+
+/* Медиа-запросы для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .hero-content, .user-area {
+        transform: scale(1); /* Уменьшенное или отмененное масштабирование для мобильных устройств */
+    }
+
+    .hero-img img {
+        transform: translateY(10px) scale(1); /* Меньшее смещение и масштабирование для мобильных устройств */
+    }
+
+    .animated-p, .animated-ul {
+        transform: translateY(10px); /* Меньшее смещение для мобильных устройств */
+    }
+}

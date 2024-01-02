@@ -38,3 +38,26 @@
 }
 
 
+/* Медиа-запросы для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .recent-views-swiper {
+        height: 150px; /* Уменьшенная высота для мобильных устройств */
+    }
+
+    .recent-view-image, .recent-view-placeholder {
+        width: 200px; /* Уменьшенный размер изображения для мобильных устройств */
+    }
+
+    .recent-view-name {
+        font-size: 12px; /* Уменьшенный размер шрифта */
+    }
+
+    .custom-swiper-prev, .custom-swiper-next {
+        width: 25px; /* Уменьшенная ширина кнопок */
+        height: 25px; /* Уменьшенная высота кнопок */
+    }
+
+    /* Дополнительные адаптивные стили, если необходимо */
+}
+
+
